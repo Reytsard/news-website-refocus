@@ -1,0 +1,179 @@
+body {
+  background-color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  width: 100%;
+  height: 90px;
+  background-color: #192140;
+}
+#header .logo {
+  color: #DCF10D;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+  left: 15px;
+  top: 50px;
+}
+#header .menu-burger {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 15px;
+  top: 40px;
+  border: 1px solid #0266FF;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+}
+#header .menu-burger i {
+  color: #0266FF;
+}
+
+#content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+#footer {
+  width: 100%;
+  height: 429px;
+  background-color: #10131C;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+#footer .footerContent {
+  padding: 40px 15px 0px 15px;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+}
+#footer .footerContent .footerCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#footer .footerContent .footerCard .footerCardTitle {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+#footer .footerContent .footerCard .footerCardRow {
+  display: flex;
+  gap: 10px;
+  color: #D7F8FF;
+  font-size: 12px;
+  font-family: "Inter", sans-serif;
+}
+#footer .followUs {
+  padding: 0px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#footer .followUs .followUsTitle {
+  font-size: 12px;
+  font-family: "Inter", sans-serif;
+  color: #9D9DB5;
+}
+#footer .followUs .socMeds {
+  display: flex;
+  gap: 13.33px;
+}
+#footer .followUs .socMeds .socMed {
+  background-color: #192140;
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  display: grid;
+  place-items: center;
+  color: #FFFFFF;
+}
+#footer .policy {
+  padding: 0px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #9D9DB5;
+  font-family: "Inter", sans-serif;
+}
+#footer .policy .policyTitle {
+  font: 12px;
+}
+#footer .policy .policyRow {
+  display: flex;
+  gap: 5px;
+}
+
+.card {
+  width: 290px;
+  height: 257px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  border: 1px solid black;
+  border-radius: 6px;
+}
+.card .cardImgBackground {
+  grid-column: 1/3;
+  grid-row: 1/3;
+}
+.card .cardImgShadow {
+  grid-column: 1/3;
+  grid-row: 1/3;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, #192140 0%, rgba(25, 33, 64, 0) 70.8%);
+  border-radius: 6px;
+}
+.card .removeCardIcon {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #9D9DB5;
+  border-radius: 100%;
+  display: grid;
+  position: relative;
+  left: 75%;
+  top: 10%;
+}
+.card .removeCardIcon .removeIcon {
+  position: relative;
+  top: 1px;
+  left: 4px;
+  color: #9D9DB5;
+}
+.card .removeCardIcon:hover {
+  border: 1px solid #0266FF;
+}
+.card .removeCardIcon:hover .removeIcon {
+  color: #0266FF;
+}
+.card .removeCardIcon:active {
+  border: 1px solid #0266FF;
+  background-color: #0266FF;
+}
+.card .removeCardIcon:active .removeIcon {
+  color: #FFFFFF;
+}
+.card .cardInfoBox {
+  grid-column: 1/3;
+  grid-row: 2/3;
+  background-color: #FFFFFF;
+  border-radius: 0 0 6px 6px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr 40px;
+}/*# sourceMappingURL=main.css.map */
