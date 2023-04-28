@@ -1,179 +1,233 @@
 body {
-  background-color: #FFFFFF;
   margin: 0;
   padding: 0;
+  width: 100vw;
 }
 
 #header {
-  width: 100%;
   height: 90px;
+  padding: 0;
+  margin: 0;
   background-color: #192140;
-}
-#header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
   color: #DCF10D;
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 20px;
-  position: absolute;
-  left: 15px;
-  top: 50px;
+}
+#header .headerLogo {
+  margin: 0;
+  padding: 0;
+  margin-left: 15px;
 }
 #header .menu-burger {
-  position: absolute;
-  width: 40px;
   height: 40px;
-  right: 15px;
-  top: 40px;
+  width: 40px;
   border: 1px solid #0266FF;
-  border-radius: 100%;
   display: grid;
   place-items: center;
-}
-#header .menu-burger i {
   color: #0266FF;
+  border-radius: 100%;
+  margin-right: 15px;
 }
-
-#content {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding-top: 40px;
-  padding-bottom: 60px;
+#header .headerOptions {
+  display: none;
 }
 
 #footer {
+  height: 450px;
   width: 100%;
-  height: 429px;
   background-color: #10131C;
+  font-family: "inter", sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-}
-#footer .footerContent {
-  padding: 40px 15px 0px 15px;
   gap: 30px;
-  display: flex;
-  flex-direction: column;
 }
-#footer .footerContent .footerCard {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-#footer .footerContent .footerCard .footerCardTitle {
-  font-family: "Inter", sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: #FFFFFF;
-}
-#footer .footerContent .footerCard .footerCardRow {
-  display: flex;
-  gap: 10px;
+#footer .footerCardContent {
   color: #D7F8FF;
   font-size: 12px;
-  font-family: "Inter", sans-serif;
+  display: flex;
+  gap: 20px;
 }
-#footer .followUs {
-  padding: 0px 15px;
+#footer .footerCardContent .footerCardContentRow {
+  display: flex;
+  gap: 20px;
+}
+#footer .footerCardTitle {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+#footer .footerCard {
+  padding-left: 0;
+  padding-top: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+  padding-left: 15px;
 }
-#footer .followUs .followUsTitle {
-  font-size: 12px;
-  font-family: "Inter", sans-serif;
-  color: #9D9DB5;
+#footer .footerCard:nth-child(1) {
+  padding-top: 40px;
 }
-#footer .followUs .socMeds {
+#footer .footerCard:nth-child(1) .footerCardContent {
   display: flex;
+  flex-direction: column;
+}
+#footer .footerCard:nth-child(3) .footerCardContent {
+  flex-direction: row;
   gap: 13.33px;
 }
-#footer .followUs .socMeds .socMed {
-  background-color: #192140;
-  border-radius: 100%;
-  height: 30px;
-  width: 30px;
+#footer .footerCard:nth-child(3) .footerCardTitle {
+  color: #9D9DB5;
+}
+#footer .footerCard:nth-child(3) .fa {
+  font-size: 1rem;
   display: grid;
   place-items: center;
+  height: 30px;
+  width: 30px;
+  background-color: #192140;
+  border-radius: 100%;
+}
+#footer .footerCard:nth-child(4) {
+  opacity: 0.4;
   color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 400;
+  padding-bottom: 40px;
 }
-#footer .policy {
-  padding: 0px 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  color: #9D9DB5;
-  font-family: "Inter", sans-serif;
-}
-#footer .policy .policyTitle {
-  font: 12px;
-}
-#footer .policy .policyRow {
-  display: flex;
-  gap: 5px;
+#footer .footerCard:nth-child(4) .footerCardContentRow {
+  gap: 10px;
 }
 
-.card {
-  width: 290px;
-  height: 257px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  border: 1px solid black;
-  border-radius: 6px;
-}
-.card .cardImgBackground {
-  grid-column: 1/3;
-  grid-row: 1/3;
-}
-.card .cardImgShadow {
-  grid-column: 1/3;
-  grid-row: 1/3;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(180deg, #192140 0%, rgba(25, 33, 64, 0) 70.8%);
-  border-radius: 6px;
-}
-.card .removeCardIcon {
-  grid-column: 2/3;
-  grid-row: 1/2;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #9D9DB5;
-  border-radius: 100%;
-  display: grid;
-  position: relative;
-  left: 75%;
-  top: 10%;
-}
-.card .removeCardIcon .removeIcon {
-  position: relative;
-  top: 1px;
-  left: 4px;
-  color: #9D9DB5;
-}
-.card .removeCardIcon:hover {
-  border: 1px solid #0266FF;
-}
-.card .removeCardIcon:hover .removeIcon {
-  color: #0266FF;
-}
-.card .removeCardIcon:active {
-  border: 1px solid #0266FF;
-  background-color: #0266FF;
-}
-.card .removeCardIcon:active .removeIcon {
-  color: #FFFFFF;
-}
-.card .cardInfoBox {
-  grid-column: 1/3;
-  grid-row: 2/3;
-  background-color: #FFFFFF;
-  border-radius: 0 0 6px 6px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 1fr 40px;
+@media only screen and (min-width: 1024px) {
+  #header {
+    width: 100%;
+    height: 84px;
+    background-color: #192140;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #header .headerLogo {
+    margin-left: 80px;
+    padding: 0;
+    font-size: 18.75px;
+    font-family: sans-serif;
+    color: #DCF10D;
+  }
+  #header .headerOptions {
+    display: block;
+    margin-right: 80px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+  }
+  #header .headerOptions ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+  }
+  #header .headerOptions ul .signUpOption {
+    margin-left: 30px;
+    color: #9D9DB5;
+  }
+  #header .headerOptions ul .logInOption {
+    width: 86px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #0266FF;
+    color: #0266FF;
+    border-radius: 40px;
+  }
+  #header .headerOptions ul li:active {
+    color: #DCF10D;
+    text-decoration-line: underline;
+  }
+  #header .menu-burger {
+    display: none;
+  }
+  #footer {
+    height: 274px;
+    width: 100%;
+    background-color: #10131C;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    font-family: "Inter", sans-serif;
+    gap: 0;
+  }
+  #footer .footerCardContent {
+    color: #D7F8FF;
+    font-size: 12px;
+    display: flex;
+    gap: 20px;
+  }
+  #footer .footerCardContent .footerCardContentRow {
+    display: flex;
+    gap: 20px;
+  }
+  #footer .footerCard {
+    padding-left: 0;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  #footer .footerCard:nth-child(1) {
+    padding-top: 0;
+    margin-top: 60px;
+    margin-left: 80px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  #footer .footerCard:nth-child(1) .footerCardContent {
+    flex-direction: row;
+  }
+  #footer .footerCard:nth-child(2) {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin-bottom: 60px;
+    margin-left: 80px;
+    margin-top: 20px;
+  }
+  #footer .footerCard:nth-child(3) {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
+  #footer .footerCard:nth-child(3) .footerCardContent {
+    flex-direction: row;
+    gap: 15px;
+  }
+  #footer .footerCard:nth-child(4) {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin-bottom: 60px;
+    margin-top: 20px;
+    flex-direction: row;
+    align-items: flex-end;
+    opacity: 0.4;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 400;
+  }
+  #footer .footerCard:nth-child(4) .footerCardContentRow {
+    gap: 10px;
+  }
+  #footer .footerCardTitle {
+    color: #FFFFFF;
+    font-weight: 700;
+  }
+  #footer .fa {
+    font-size: 1rem;
+    display: grid;
+    place-items: center;
+    height: 30px;
+    width: 30px;
+    background-color: #192140;
+    border-radius: 100%;
+  }
 }/*# sourceMappingURL=main.css.map */
