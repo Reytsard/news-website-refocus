@@ -1,9 +1,9 @@
 @use 'variables';
+@use 'mixins';
 
 body{
     margin: 0;
     padding: 0;
-    width: 100vw;
 }
 #header{
     height: 90px;
@@ -23,12 +23,18 @@ body{
     .menu-burger{
         height: 40px;
         width: 40px;
-        border: 1px solid variables.$color9;
+        border: 1px solid variables.$color4;
         display: grid;
         place-items: center;
-        color: variables.$color9; 
+        color: variables.$color4; 
         border-radius: 100%;
         margin-right: 15px;
+    }
+    .menu-burger:hover{
+        @include mixins.buttonHovered();
+    }
+    .menu-burger:active{
+        @include mixins.buttonActive();
     }
     .headerOptions{
         display: none;
@@ -107,17 +113,51 @@ body{
     margin-top: 40px;
     margin-bottom: 60px;
     display: flex;
-    flex: wrap;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     .card{
-        width: 320px;
+        width: 290px;
         height: 300px;
         border-radius: 6px;
         background-color: variables.$color2;
         display: grid;
         grid-template-rows: 1fr 44px;
         font-family: 'Inter', sans-serif;
+        .cardThumbnail{
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            border-radius: 6px;
+        }
+        .isRead{
+            grid-row: 1 / 2;
+            visibility: hidden; //add change when hovered and active
+            width: 20px;
+            height: 0px; //addchange when hovered and activ
+            margin-bottom: 10px;
+            border: 1px solid variables.$color5;
+            display: grid;
+            place-items: center;
+            border-radius: 100%;
+        }
+        .cardTitle{
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            height: fit-content;
+            align-self: flex-end;
+            padding: 10px 20px;
+            padding-right: 80px;
+            font-weight: 700;
+            background-color: variables.$color2;
+            
+        }
+        .cardLine{
+            width: 250px;
+            margin: 0px 20px;
+            border: 0.25px solid variables.$color4;
+            position: relative;
+            bottom: 45px;
+        }
         .dateAndLikes{
             grid-row: -1 / -2;
             grid-column: 1 / 2;
@@ -126,6 +166,7 @@ body{
             align-items: center;
             padding: 10px 20px;
             color: variables.$color4;
+            font-size: 12px;
             .date{
                 padding-left: auto;
                 padding-right: auto;
@@ -133,9 +174,79 @@ body{
                 padding: 4px 10px;
                 border-radius: 40px;
             }
+            .likes{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                .hoveredHeart{
+                    font-size: 16px;
+                }
+                .hoveredHeart:hover{
+                    @include mixins.heartHovered();
+                }
+            }
+        }
+        .cardShadow{
+            grid-column: 1 / 2;
+            grid-row: 1/ 2;
+            visibility: hidden;
+            background: linear-gradient(180deg, variables.$color5 0%, rgba(25, 33, 64, 0) 70.8%);
+            border-radius: 6px;
+        }
+        .removeIcon{
+            visibility: hidden; // change when hover and active
+            grid-column: 1 / 2;
+            grid-row: 1/ 2;
+            height: 20px;
+            width: 20px;
+            position: relative;
+            left: 87%;
+            top: 5%;
+            border: 1px solid variables.$color4;
+            border-radius: 100%;
+            i{
+                position: relative;
+                top: 1px;
+                display: grid;
+                place-items: center;
+                color: variables.$color4;
+            }
+        }
+        .removeIcon:hover{
+            @include mixins.buttonHovered();
+        }
+        .removeIcon:active{
+            @include mixins.buttonActive();
         }
     }
+    .card:hover{
+        .removeIcon{
+            visibility: visible;
+        }
+        .cardShadow{
+            visibility: visible;
+        }
+        .isRead{
+            height: 20px;
+            visibility: visible;
+        }
+    }
+    .card:active{
+        .removeIcon{
+            visibility: visible;
+        }
+        .cardShadow{
+            visibility: visible;
+        }
+        .isRead{
+            height: 20px;
+            visibility: visible;
+        }
+    }
+    
 }
+
+
 @media only screen and (min-width: 1024px){
     #header{
         width: 100%;
@@ -176,14 +287,29 @@ body{
                     color: variables.$color9;
                     border-radius: 40px;
                 }
-                li:active{
+                li:hover, li:active{
                     color:variables.$color8;
                     text-decoration-line: underline;
+                    cursor: pointer;
+                }
+                #logInButton:hover{
+                    @include mixins.buttonHovered();
+                }
+                #logInButton:active{
+                    @include mixins.buttonActive();
                 }
             }
         }
         .menu-burger{
             display: none;
+        }
+    }
+    .cards{
+        .card{
+            width: 320px;
+            .cardLine{
+                width: 280px;
+            }
         }
     }
     #footer{

@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
 }
 
 #header {
@@ -23,12 +22,24 @@ body {
 #header .menu-burger {
   height: 40px;
   width: 40px;
-  border: 1px solid #0266FF;
+  border: 1px solid #9D9DB5;
   display: grid;
   place-items: center;
-  color: #0266FF;
+  color: #9D9DB5;
   border-radius: 100%;
   margin-right: 15px;
+}
+#header .menu-burger:hover {
+  border: 1px solid #0266FF;
+}
+#header .menu-burger:hover i {
+  color: #0266FF;
+}
+#header .menu-burger:active {
+  background-color: #0266FF;
+}
+#header .menu-burger:active i {
+  color: #FFFFFF;
 }
 #header .headerOptions {
   display: none;
@@ -103,18 +114,52 @@ body {
   margin-top: 40px;
   margin-bottom: 60px;
   display: flex;
-  flex: wrap;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
 .cards .card {
-  width: 320px;
+  width: 290px;
   height: 300px;
   border-radius: 6px;
   background-color: #F8F9FC;
   display: grid;
   grid-template-rows: 1fr 44px;
   font-family: "Inter", sans-serif;
+}
+.cards .card .cardThumbnail {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  border-radius: 6px;
+}
+.cards .card .isRead {
+  grid-row: 1/2;
+  visibility: hidden;
+  width: 20px;
+  height: 0px;
+  margin-bottom: 10px;
+  border: 1px solid #192140;
+  display: grid;
+  place-items: center;
+  border-radius: 100%;
+}
+.cards .card .cardTitle {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-self: flex-end;
+  padding: 10px 20px;
+  padding-right: 80px;
+  font-weight: 700;
+  background-color: #F8F9FC;
+}
+.cards .card .cardLine {
+  width: 250px;
+  margin: 0px 20px;
+  border: 0.25px solid #9D9DB5;
+  position: relative;
+  bottom: 45px;
 }
 .cards .card .dateAndLikes {
   grid-row: -1/-2;
@@ -124,6 +169,7 @@ body {
   align-items: center;
   padding: 10px 20px;
   color: #9D9DB5;
+  font-size: 12px;
 }
 .cards .card .dateAndLikes .date {
   padding-left: auto;
@@ -131,6 +177,75 @@ body {
   border: 1px solid #9D9DB5;
   padding: 4px 10px;
   border-radius: 40px;
+}
+.cards .card .dateAndLikes .likes {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.cards .card .dateAndLikes .likes .hoveredHeart {
+  font-size: 16px;
+}
+.cards .card .dateAndLikes .likes .hoveredHeart:hover {
+  color: #0266FF;
+}
+.cards .card .cardShadow {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  visibility: hidden;
+  background: linear-gradient(180deg, #192140 0%, rgba(25, 33, 64, 0) 70.8%);
+  border-radius: 6px;
+}
+.cards .card .removeIcon {
+  visibility: hidden;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  height: 20px;
+  width: 20px;
+  position: relative;
+  left: 87%;
+  top: 5%;
+  border: 1px solid #9D9DB5;
+  border-radius: 100%;
+}
+.cards .card .removeIcon i {
+  position: relative;
+  top: 1px;
+  display: grid;
+  place-items: center;
+  color: #9D9DB5;
+}
+.cards .card .removeIcon:hover {
+  border: 1px solid #0266FF;
+}
+.cards .card .removeIcon:hover i {
+  color: #0266FF;
+}
+.cards .card .removeIcon:active {
+  background-color: #0266FF;
+}
+.cards .card .removeIcon:active i {
+  color: #FFFFFF;
+}
+.cards .card:hover .removeIcon {
+  visibility: visible;
+}
+.cards .card:hover .cardShadow {
+  visibility: visible;
+}
+.cards .card:hover .isRead {
+  height: 20px;
+  visibility: visible;
+}
+.cards .card:active .removeIcon {
+  visibility: visible;
+}
+.cards .card:active .cardShadow {
+  visibility: visible;
+}
+.cards .card:active .isRead {
+  height: 20px;
+  visibility: visible;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -175,12 +290,31 @@ body {
     color: #0266FF;
     border-radius: 40px;
   }
-  #header .headerOptions ul li:active {
+  #header .headerOptions ul li:hover, #header .headerOptions ul li:active {
     color: #DCF10D;
     text-decoration-line: underline;
+    cursor: pointer;
+  }
+  #header .headerOptions ul #logInButton:hover {
+    border: 1px solid #0266FF;
+  }
+  #header .headerOptions ul #logInButton:hover i {
+    color: #0266FF;
+  }
+  #header .headerOptions ul #logInButton:active {
+    background-color: #0266FF;
+  }
+  #header .headerOptions ul #logInButton:active i {
+    color: #FFFFFF;
   }
   #header .menu-burger {
     display: none;
+  }
+  .cards .card {
+    width: 320px;
+  }
+  .cards .card .cardLine {
+    width: 280px;
   }
   #footer {
     height: 274px;

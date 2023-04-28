@@ -17,8 +17,8 @@
                 <li>Our Courses</li>
                 <li>Free webinars</li>
                 <li>Reviews</li>
-                <li class="signUpOption">Sign up</li>
-                <li class="logInOption">Log in</li>
+                <li class="signUpOption" id="signUp">Sign up</li>
+                <li class="logInOption" id="logInButton">Log in</li>
             </ul>
         </div>
         <div class="menu-burger">
@@ -28,19 +28,26 @@
 
     <div class="cards">
         <div class="card">
-            <div class="cardThumbnail"></div>
+            <div class="cardThumbnail" style=" background: url(./imgs/Image-8.png); background-size: contain;"></div>
             <div class="cardShadow"></div>
-            <div class="removeIcon"></div>
-            <div class="isRead"></div>
-            <div class="cardInfo">
-                <div class="cardTitle"></div>
-                <!--use height: fit-content -->
+            <div class="removeIcon">
+                <i class="fa fa-times closeIcon" aria-hidden="false"></i>
             </div>
+            <div class="cardTitle">
+                <div class="isRead">
+                    <i class="fa fa-check" aria-hidden="false"></i>
+                </div>
+                Front-End vs Back-End Developer: What's the Difference?
+            </div>
+            
+            <div class="cardLine"></div>
             <div class="dateAndLikes">
-                <div class="date">January 3, 2023</div>
+                <div class="date">
+                    January 3, 2023</div>
                 <div class="likes">
-                    <i class="fa fa-heart-o" aria-hidden="true"></i>
-                    1.2k</div>
+                    <i class="fa fa-heart-o hoveredHeart" aria-hidden="true"></i>
+                    <span>1.2k</span>
+                </div>
             </div>
         </div>
     </div>
