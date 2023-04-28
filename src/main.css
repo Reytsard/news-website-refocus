@@ -64,6 +64,18 @@ body {
   display: flex;
   gap: 20px;
 }
+#footer .footerCardContent i:hover {
+  border: 1px solid #0266FF;
+}
+#footer .footerCardContent i:hover i {
+  color: #0266FF;
+}
+#footer .footerCardContent i:active {
+  background-color: #0266FF;
+}
+#footer .footerCardContent i:active i {
+  color: #FFFFFF;
+}
 #footer .footerCardTitle {
   color: #FFFFFF;
   font-weight: 700;
@@ -110,12 +122,17 @@ body {
   gap: 10px;
 }
 
+.selected {
+  color: #0266FF;
+}
+
 .cards {
   margin-top: 40px;
   margin-bottom: 60px;
   display: flex;
+  gap: 20px;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 .cards .card {
@@ -309,6 +326,9 @@ body {
   }
   #header .menu-burger {
     display: none;
+  }
+  .cards {
+    gap: 40px;
   }
   .cards .card {
     width: 320px;

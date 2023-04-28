@@ -57,6 +57,12 @@ body{
             display: flex;
             gap: 20px;
         }
+        i:hover{
+            @include mixins.buttonHovered();
+        }
+        i:active{
+            @include mixins.buttonActive();
+        }
     }
     .footerCardTitle{
         color: variables.$color1;
@@ -109,12 +115,16 @@ body{
         }
     }
 }
+.selected{
+    color: variables.$color9;
+}
 .cards{
     margin-top: 40px;
     margin-bottom: 60px;
     display: flex;
+    gap: 20px;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     .card{
         width: 290px;
@@ -226,10 +236,12 @@ body{
         .cardShadow{
             visibility: visible;
         }
+        //get isRead and put it in a addeventlistener to add height and visibility when clicked
         .isRead{
             height: 20px;
             visibility: visible;
         }
+        //
     }
     .card:active{
         .removeIcon{
@@ -305,6 +317,7 @@ body{
         }
     }
     .cards{
+        gap: 40px;
         .card{
             width: 320px;
             .cardLine{
