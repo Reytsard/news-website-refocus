@@ -8,11 +8,7 @@
 
 let hearts = document.querySelectorAll('.likes .hoveredHeart');
 hearts.forEach(elem => {
-    elem.addEventListener('click',() => {
-    elem.classList.toggle("fa-heart");
-    elem.classList.toggle("fa-heart-o");
-    elem.classList.toggle("selected");
-    });
+    elem.addEventListener('click',changeHeart);
 })
 let cards = document.querySelectorAll('.card');
 cards.forEach(elem => {
@@ -30,4 +26,9 @@ function addReadSign(){
     let a = this.querySelector('.cardTitle .isRead');
         a.style.height = '20px';
         a.style.visibility = 'visible';
+}
+function changeHeart(){
+    this.classList.toggle("fa-heart");
+    this.classList.toggle("fa-heart-o");
+    this.classList.toggle("selected");
 }
