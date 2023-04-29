@@ -1,6 +1,9 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 #header {
@@ -116,7 +119,7 @@ body {
   color: #FFFFFF;
   font-size: 12px;
   font-weight: 400;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
 }
 #footer .footerCard:nth-child(4) .footerCardContentRow {
   gap: 10px;
@@ -250,18 +253,10 @@ body {
 .cards .card:hover .cardShadow {
   visibility: visible;
 }
-.cards .card:hover .isRead {
-  height: 20px;
-  visibility: visible;
-}
 .cards .card:active .removeIcon {
   visibility: visible;
 }
 .cards .card:active .cardShadow {
-  visibility: visible;
-}
-.cards .card:active .isRead {
-  height: 20px;
   visibility: visible;
 }
 
@@ -328,6 +323,10 @@ body {
     display: none;
   }
   .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    place-items: center;
     gap: 40px;
   }
   .cards .card {
